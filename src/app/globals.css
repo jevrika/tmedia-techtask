@@ -2,32 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color:#E2E3E9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* nav styles */
+nav {
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 150px;
+  background-color: #181e34;
+  @apply text-[#C5C7D3];
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.logo {
+  margin-right: 20px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.navbarIcon {
+  margin-right: 8px;
+}
+
+.svg:hover {
+ color:red;
+ fill:red
+}
+
+.userWrapper {
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown {
+  background: transparent;
+}
+
+.circleWithFirstLetter {
+  color: #e2e3e9;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cdd2e2;
+}
+
+.firstLetter {
+  font-weight: 700;
+  color: #181e34;
+  font-size: 14px;
+}
+
+.headerBox{
+  display:flex;
+  flex-direction: column;
+  gap:12px;
 }
