@@ -6,68 +6,94 @@ body{
   background-color:#E2E3E9;
 }
 
-/* nav styles */
-nav {
-  text-wrap: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-  padding: 20px 150px;
-  background-color: #181e34;
-  @apply text-[#C5C7D3];
-}
-
-.logo {
-  margin-right: 20px;
+/* nav styles  */
+nav{
+  @apply 
+  flex justify-center items-center gap-[32px] py-[20px] px-[150px] bg-[#181e34] text-nowrap text-[#C5C7D3]
 }
 
 .link {
-  display: flex;
-  align-items: center;
-}
-
-.navbarIcon {
-  margin-right: 8px;
-}
-
-.svg:hover {
- color:red;
- fill:red
+  @apply flex items-center gap-[8px]
 }
 
 .userWrapper {
-  gap: 8px;
-  align-items: center;
-  margin-left: auto;
-  display: flex;
-  justify-content: center;
+  @apply flex justify-center ml-[auto] items-center gap-[8px]
 }
 
 .dropdown {
-  background: transparent;
-}
-
-.circleWithFirstLetter {
-  color: #e2e3e9;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #cdd2e2;
+  @apply absolute top-0 right-[20px] w-full my-[35px] pl-[60px] flex flex-col bg-transparent gap-[5px]
 }
 
 .firstLetter {
-  font-weight: 700;
-  color: #181e34;
-  font-size: 14px;
+  @apply
+    text-[#181e34] font-bold  text-[14px] w-[32px] h-[32px] flex-shrink-0 rounded-full flex items-center justify-center bg-[#cdd2e2];
 }
 
+
+/* header styles  */
+
 .headerBox{
-  display:flex;
-  flex-direction: column;
-  gap:12px;
+  @apply flex flex-col gap-[12px]
+}
+
+/* search styles */
+
+.searchWrapper{
+   @apply flex justify-center items-center gap-[8px] bg-[#F0F1F4] rounded-md py-[12px] px-[12px] 
+}
+
+input:focus-visible{
+  outline:none;
+}
+
+/* device header styles */
+
+
+.buttonOnline {
+  border: 1px solid #D6D8E0;
+}
+
+.buttonOffline{
+  border: 1px solid #3498DB;
+  @apply bg-[#3498DB] text-white
+}
+
+/* device content styles */
+
+.block{
+  border: 1px solid #D6D8E0;
+  @apply flex items-center rounded-md py-[20px] px-[20px] gap-[16px] 
+}
+
+.checkbox{
+  -webkit-appearance: none; 
+  transition: 0.10s;
+  @apply bg-[#FE0006] text-center rounded-full outline-none w-[6px] h-[6px] cursor-pointer
+}
+
+.checkbox:checked {
+  @apply bg-[#0E9700]
+}
+
+.checkbox:before {
+  @apply bg-[#FE0006]
+}
+
+.checkbox:after {
+  @apply bg-[#53972e]
+}
+
+.blockButton{
+  border: 1px solid  #F0F1F4;
+  @apply bg-[#F0F1F4] py-[6px] px-[16px] text-[14px] font-medium
+}
+
+/* common styles */
+
+.button{
+  @apply flex flex-row items-center py-[6px] px-[16px] rounded-md gap-[10px]
+}
+
+.button:hover {
+  @apply opacity-75	
 }
