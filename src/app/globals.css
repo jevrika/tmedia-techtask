@@ -48,12 +48,25 @@ input:focus-visible{
 
 /* device header styles */
 
-
-.buttonOnline {
+.statusButton {
   border: 1px solid #D6D8E0;
 }
 
-.buttonOffline{
+.buttonOnline:active {
+  border: 1px solid #D6D8E0;
+  @apply bg-[#3498DB] text-white
+}
+
+.buttonOnline:focus {
+  border: 1px solid #D6D8E0;
+  @apply bg-[#3498DB] text-white
+}
+
+.buttonOffline:active {
+  border: 1px solid #3498DB;
+  @apply bg-[#3498DB] text-white
+}
+.buttonOffline:focus {
   border: 1px solid #3498DB;
   @apply bg-[#3498DB] text-white
 }
@@ -65,22 +78,18 @@ input:focus-visible{
   @apply flex items-center rounded-md py-[20px] px-[20px] gap-[16px] 
 }
 
-.checkbox{
+.status{
   -webkit-appearance: none; 
   transition: 0.10s;
-  @apply bg-[#FE0006] text-center rounded-full outline-none w-[6px] h-[6px] cursor-pointer
+  @apply bg-[#FE0006] text-center rounded-full outline-none w-[6px] h-[6px]
 }
 
-.checkbox:checked {
+.statusTrue {
   @apply bg-[#0E9700]
 }
 
-.checkbox:before {
+.statusFalse {
   @apply bg-[#FE0006]
-}
-
-.checkbox:after {
-  @apply bg-[#53972e]
 }
 
 .blockButton{

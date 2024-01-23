@@ -8,7 +8,6 @@ export const generateMetadata = async ({ params }: { params: { id: string } }) =
   return {
     title: `LCD | ${device.title}`
   }
-
 }
 
 const DeviceDetailPage = ({ params }: { params: { id: number } }) => {

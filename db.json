@@ -23,6 +23,22 @@
       "model": "2N Verso",
       "constat": "0",
       "id": 3
+    },
+    {
+      "status": true,
+      "title": "Main Entry Intercom",
+      "connection": 100,
+      "model": "2N Verso",
+      "constat": "0",
+      "id": 4
+    },
+    {
+      "status": true,
+      "title": "Main Entry Intercom",
+      "connection": 90,
+      "model": "2N Verso M",
+      "constat": "100",
+      "id": 5
     }
   ]
 }

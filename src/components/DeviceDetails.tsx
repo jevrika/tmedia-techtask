@@ -22,12 +22,16 @@ const DeviceDetails = async ({ params }: { params: { id: number } }) => {
     <div className='py-[20px] px-[135px] absolute w-full translate-y-[-65px]'>
       <div className='px-[20px] bg-[#FFFFFF] rounded-t' >
         <div className="flex justify-between gap-[4px] py-[20px] header">
+          <h1>{device.title}</h1>
+          <span> {device.model}</span>
+          <p className='text-[14px] font-medium'>{device.constat} messages over 28 days </p>
         </div>
       </div>
-      <h1>{device.title}</h1>
+
       <div className="bg-[#F0F1F4] py-[12px] px-[20px] rounded-b-md ">
         <span className='text-[14px] text-[#5C5F70] '> Showing {device.title}</span>
       </div>
+      
     </div>
   )
 }

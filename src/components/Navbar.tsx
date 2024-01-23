@@ -77,8 +77,8 @@ const Navbar = () => {
         </div>
         {dropdownVisible && (
           <div className="dropdown">
-            <a href="#" >Settings</a>
-            <a href="#" >Logout</a>
+            <Link href="#" >Settings</Link>
+            <Link href="#" >Logout</Link>
           </div>
         )}
       </div>
