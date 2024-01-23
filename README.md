@@ -4,8 +4,8 @@ App created using Next.js with json server, for T-Media technical task, where th
 
 1. Clone the repository.
 2. Install dependencies using npm i.
-3. Start the server locally with npm run dev.
-4. Start json server with json-server -p 4000 db.json
+3. Start the server locally with `npm run dev`
+4. Start json server with `json-server -p 4000 db.json`
 
 ## Pages and Routes
 
