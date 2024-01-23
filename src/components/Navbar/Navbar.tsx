@@ -15,9 +15,10 @@ import GeneralSettings from "../NavbarIcons/GeneralSettings"
 import React from "react";
 
 const Navbar = () => {
+
+  const user = 'Roberts'
   const pathname = usePathname()
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [selectedName, setSelectedName] = useState('Roberts');
 
 
   const toggleDropdown = () => {
@@ -28,8 +29,9 @@ const Navbar = () => {
     return pathname === href;
   };
 
+  
   return (
-    <nav className="bg-secondary">
+    <nav className="bg-navbar-background">
       <Link className="mr-5" href={'/'} >
         <Image src={Logo} alt="LCD logo" width={66} height={40} />
       </Link>
@@ -54,30 +56,27 @@ const Navbar = () => {
         General Settings
       </Link>
 
-      <div className=" relative userWrapper">
+      <div className="relative userWrapper">
         <div className="firstLetter">
-          <h3> {selectedName[0].toUpperCase()} </h3>
+          <h3> {user[0].toUpperCase()} </h3>
         </div>
 
         <div className="profile-container">
           <div className="flex flex-row cursor-pointer" onClick={toggleDropdown}>
-            <span className="username">{selectedName}</span>
+            <span className="username">{user}</span>
+          
+            <Image src={DropdownArrow} alt={"Dropdown Arrow"} className={dropdownVisible ? 'arrowDown' : 'arrowUp'} />
 
-            {dropdownVisible ?
-              (
-                <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-1 rotate-180" />
-              ) : (
-                <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-1" />
-              )
-            }
           </div>
         </div>
+
         {dropdownVisible && (
           <div className="dropdown">
             <Link href="#" >Settings</Link>
             <Link href="#" >Logout</Link>
           </div>
         )}
+
       </div>
 
     </nav>

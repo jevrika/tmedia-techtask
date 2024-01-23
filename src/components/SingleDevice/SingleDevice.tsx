@@ -32,23 +32,23 @@ const SingleDevice = ({ title, connectionPercentage, deviceVariant, model, messa
 
       <div className="firstColumn">
         <h1 className='text-3.5 font-medium'> {title}</h1>
-        <p className='text-3 text-secondary' >Connection {connectionPercentage} %</p>
+        <p className='text-3 text-text-secondary' >Connection {connectionPercentage} %</p>
       </div>
 
       <div className="secondColumn">
-        <h3 className='text-3 text-secondary'> Model </h3>
+        <h3 className='text-3 text-text-secondary'> Model </h3>
         <p className='text-3.5 font-medium' >{model}
         </p>
       </div>
       <div className="thirdColumn">
-        <h3 className='text-3 text-secondary' > Con-stat </h3>
+        <h3 className='text-3 text-text-secondary' > Con-stat </h3>
         <p className='text-3.5 font-medium'>{messages} messages over 28 days </p>
       </div>
 
       <div className="flex gap-1 ml-[auto]" >
 
-        <Button buttonText={'Settings'} buttonVariant={'primary'} type={'button'}/>
-        <Button buttonText={'Control'} buttonVariant={'primary'} type={'button'}/>
+        <Button buttonText={'Settings'} buttonVariant={'deviceButton'} type={'button'} />
+        <Button buttonText={'Control'} buttonVariant={'deviceButton'} type={'button'} />
 
         <Link className='flex justify-center' href={`/devices/${deviceId}`}>
           <Image src={RightArrow} alt='Right arrow' className='ml-auto' />

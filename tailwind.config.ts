@@ -5,6 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'primary' : '#F0F1F4',
+        'secondary' :'#E2E3E9',
         'text-primary': '#C5C7D3',
         'text-secondary': '#5C5F70',
         'navbar-primary': '#C5C7D3',
@@ -14,7 +16,15 @@ const config: Config = {
         'button-primary' : '#F0F1F4',
         'button-secondary' : '#D6D8E0',
         'button-active': '#3498DB',
-        'device-content-background' : '#F0F1F4'
+        'device-content-background' : '#F0F1F4',
+        'device-background' : '#d6d8e0',
+        'profile-background' : '#9FA6C1',
+        'online-status-color' : "#0E9700",
+        'offline-status-color' : "#FE0006",
+        'number-background': '#F0F1F4',
+        'active-number-background' : '#D6EFFF',
+        'border-primary' : '#d6d8e0'
+
       },
     },
   },

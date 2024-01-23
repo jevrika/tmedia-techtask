@@ -3,15 +3,12 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#E2E3E9];
+  @apply bg-secondary box-border;
 }
 
-.button-primary {
-  @apply bg-[#F0F1F4];
-}
 /* nav styles  */
 nav {
-  @apply flex justify-center items-center gap-8 py-5 px-36 bg-[#181e34] text-nowrap text-text-primary;
+  @apply flex justify-center items-center gap-8 py-5 px-36 text-nowrap text-text-primary;
 }
 
 .link {
@@ -27,9 +24,16 @@ nav {
 }
 
 .firstLetter {
-  @apply text-[#181e34] font-bold  text-sm w-8 h-8 flex-shrink-0 rounded-full flex items-center justify-center bg-[#cdd2e2];
+  @apply bg-profile-background text-navbar-background font-bold text-sm w-8 h-8 flex-shrink-0 rounded-full flex items-center justify-center;
 }
 
+.arrowUp {
+  @apply ml-1;
+}
+
+.arrowDown {
+  @apply ml-1 rotate-180;
+}
 /* header styles  */
 
 .headerBox {
@@ -39,7 +43,7 @@ nav {
 /* search styles */
 
 .searchWrapper {
-  @apply flex justify-center items-center gap-2 bg-[#F0F1F4] rounded-md py-3 px-3;
+  @apply flex justify-center items-center gap-2 bg-primary rounded-md py-3 px-3;
 }
 
 input:focus-visible {
@@ -49,47 +53,43 @@ input:focus-visible {
 /* device header styles */
 
 .statusButton {
-  border: 1px solid #d6d8e0;
+  @apply border border-solid border-border-primary;
 }
 
 .statusButton:active {
-  border: 1px solid #d6d8e0;
-  @apply bg-button-active text-white;
+  @apply bg-button-active text-white border border-solid border-border-primary;
 }
 
 .statusButton:focus {
-  border: 1px solid #d6d8e0;
-  @apply bg-button-active text-white;
+  @apply bg-button-active text-white border border-solid border-border-primary;
 }
 
 /* device content styles */
 
 .device {
-  border: 1px solid #d6d8e0;
-  @apply flex items-center rounded-md py-5 px-5 gap-4;
+  @apply flex items-center rounded-md py-5 px-5 gap-4 border border-solid border-border-primary;
 }
 
-.device:hover .blockButton {
+.device:hover .deviceButton {
   @apply visible;
 }
 
 .statusIndicator {
   -webkit-appearance: none;
   transition: 0.1s;
-  @apply bg-[#FE0006] text-center rounded-full outline-none w-1.5 h-1.5;
+  @apply bg-offline-status-color text-center rounded-full outline-none w-1.5 h-1.5;
 }
 
 .deviceOnline {
-  @apply bg-[#0E9700];
+  @apply bg-online-status-color;
 }
 
 .deviceOffline {
-  @apply bg-[#FE0006];
+  @apply bg-offline-status-color;
 }
 
-.blockButton {
-  border: 1px solid #f0f1f4;
-  @apply bg-[#F0F1F4] py-1.5 px-4 text-sm font-medium invisible;
+.deviceButton {
+  @apply bg-primary py-1.5 px-4 text-sm font-medium invisible border border-solid border-primary;
 }
 
 /* common styles */
@@ -100,12 +100,4 @@ input:focus-visible {
 
 .button:hover {
   @apply opacity-75;
-}
-
-.test:active .dropdown {
-  @apply visible flex;
-}
-
-.test:focus .dropdown {
-  @apply visible flex;
 }

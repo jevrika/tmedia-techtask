@@ -11,11 +11,13 @@ const Header = () => {
   }
 
   return (
+
     <div className="py-5 px-36 bg-header-background headerBox">
       <div className='text-text-primary text-sm'>Home /</div>
       <span className='text-white text-xl'>{sectionName}</span>
       <div className='h-9'></div>
     </div>
+    
   )
 }
 

@@ -21,6 +21,7 @@ const DeviceDetails = async ({ params }: { params: { id: number } }) => {
   return (
 
     <div className='py-5 px-32 absolute w-full translate-y-[-65px]'>
+      
       <div className='px-5 bg-[#FFFFFF] rounded-t' >
         <div className="flex justify-between gap-1 py-5 header">
           <h1>{device.title}</h1>
@@ -30,7 +31,7 @@ const DeviceDetails = async ({ params }: { params: { id: number } }) => {
       </div>
 
       <div className="bg-device-content-background py-3 px-5 rounded-b-md ">
-        <span className='text-3.5 text-secondary'> Showing {device.title}</span>
+        <span className='text-3.5 text-text-secondary'> Showing {device.title}</span>
       </div>
       
     </div>
