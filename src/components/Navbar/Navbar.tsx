@@ -5,13 +5,13 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from 'react';
 
-import Logo from '../assets/Logotype.svg'
-import DropdownArrow from '../assets/DropdownArrow.svg'
+import Logo from '../../assets/Logotype.svg'
+import DropdownArrow from '../../assets/DropdownArrow.svg'
 
-import Dashboard from "./NavbarIcons/Dashboard"
-import Connectors from "./NavbarIcons/Connectors"
-import Devices from "./NavbarIcons/Devices"
-import GeneralSettings from "./NavbarIcons/GeneralSettings"
+import Dashboard from "../NavbarIcons/Dashboard"
+import Connectors from "../NavbarIcons/Connectors"
+import Devices from "../NavbarIcons/Devices"
+import GeneralSettings from "../NavbarIcons/GeneralSettings"
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Link className="mr-[20px]" href={'/'} >
+      <Link className="mr-5" href={'/'} >
         <Image src={Logo} alt="LCD logo" width={66} height={40} />
       </Link>
 
@@ -65,16 +65,18 @@ const Navbar = () => {
         <div className="profile-container">
           <div className="flex flex-row cursor-pointer" onClick={toggleDropdown}>
             <span className="username">{selectedName}</span>
-            
+
             {dropdownVisible ?
-            (
-              <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-[4px] rotate-180" />
-            ) : (
-              <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-[4px]" />
-            )
+              (
+                <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-1 rotate-180" />
+              ) : (
+                <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-1" />
+              )
             }
+
           </div>
         </div>
+        
         {dropdownVisible && (
           <div className="dropdown">
             <Link href="#" >Settings</Link>

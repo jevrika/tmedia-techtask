@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-      <div className="py-[20px] px-[150px] bg-[#181e34] headerBox">
+      <div className="py-5 px-36 bg-[#181e34] headerBox">
         <div className='text-[#C5C7D3] text-sm'>Home /</div>
         <span className='text-white text-xl'>{sectionName}</span>
         <div className='h-9'></div>

@@ -1,4 +1,4 @@
-import DeviceDetails from "@/components/DeviceDetails"
+import DeviceDetails from "@/components/DeviceDetails/DeviceDetails"
 
 export const generateMetadata = async ({ params }: { params: { id: string } }) => {
 
@@ -9,6 +9,7 @@ export const generateMetadata = async ({ params }: { params: { id: string } }) =
     title: `LCD | ${device.title}`
   }
 }
+
 
 const DeviceDetailPage = ({ params }: { params: { id: number } }) => {
 

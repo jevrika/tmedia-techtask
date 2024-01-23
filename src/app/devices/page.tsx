@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import DeviceList from '../../components/DeviceList'
+import DeviceList from '../../components/DeviceList/DeviceList'
 
 export const metadata: Metadata = {
   title: 'LCD | Devices',
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const getDevices = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/devices',{ cache: 'no-store' })
+    const response = await fetch('http://localhost:3000/api/devices', { cache: 'no-store' })
     return response.json()
   } catch (error) {
     console.log('Failed to get devices', error)
@@ -21,9 +21,9 @@ const Devices = async () => {
   const devices = await getDevices()
 
   return (
-    
-      <div><DeviceList devices={devices}/></div>
-   
+
+    <div><DeviceList devices={devices} /></div>
+
   )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 
-type Props = {
+type DevicesProps = {
   fill: string
 }
 
-const Devices = ({ fill }: Props) => {
+const Devices = ({ fill }: DevicesProps) => {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill={fill} xmlns="http://www.w3.org/2000/svg">
       <g id="Icon / 24px / Device monitoring">
