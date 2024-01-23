@@ -6,7 +6,7 @@ type DevicesProps = {
 
 const Devices = ({ fill }: DevicesProps) => {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill={fill} xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="24" viewBox="0 0 24 24" className={`fill-${fill}`} xmlns="http://www.w3.org/2000/svg">
       <g id="Icon / 24px / Device monitoring">
         <g id="icon">
           <path d="M9 12C9.55228 12 10 12.4477 10 13C10 13.5523 9.55228 14 9 14H7C6.44772 14 6 13.5523 6 13C6 12.4477 6.44772 12 7 12H9Z" fill={fill} />

@@ -10,13 +10,11 @@ export const generateMetadata = async ({ params }: { params: { id: string } }) =
   }
 }
 
-
 const DeviceDetailPage = ({ params }: { params: { id: number } }) => {
 
   return (
     <div >
       <div><DeviceDetails params={{ id: params.id }} /></div>
-
     </div>
   )
 }

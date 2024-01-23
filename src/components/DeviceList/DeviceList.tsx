@@ -18,8 +18,8 @@ const Devices = ({ devices }: DevicesProps) => {
       <div className='px-5 bg-[#FFFFFF] rounded-t'>
         <div className="flex justify-between gap-1 py-5 header">
           <div className="flex gap-1 buttonWrapper">
-            <Button className={'button statusButton buttonOnline'} number={devices.filter((device: Device) => device.status === true).length} click={() => setStatus(true)} buttonText={'Online'} />
-            <Button className={'button statusButton buttonOffline'} number={devices.filter((device: Device) => device.status === false).length} click={() => setStatus(false)} buttonText={'Offline'} />
+            <Button buttonVariant={'secondary'} number={devices.filter((device: Device) => device.status === true).length} click={() => setStatus(true)} buttonText={'Online'} type={'button'} />
+            <Button buttonVariant={'secondary'} number={devices.filter((device: Device) => device.status === false).length} click={() => setStatus(false)} buttonText={'Offline'} type={'button'} />
           </div>
           <div className="searchWrapper">
             <Image src={Search} alt={'Search icon'} height={16} width={16} />
@@ -29,10 +29,10 @@ const Devices = ({ devices }: DevicesProps) => {
       </div>
       {devices.filter((device: Device) => device.status === status).map((device: Device) =>
         <div key={device.id} className={`bg-[#FFFFFF] px-5 flex flex-col gap-1 content pb-5 DeviceId-${device.id}`}>
-          <SingleDevice deviceStatus={device.status} deviceId={device.id} model={device.model} className={'block'} title={device.title} connectionPercentage={device.connection} messages={device.constat} days={28} />
+          <SingleDevice deviceVariant={'device'} deviceStatus={device.status} deviceId={device.id} model={device.model} title={device.title} connectionPercentage={device.connection} messages={device.constat} />
         </div>
       )}
-      <div className="bg-[#F0F1F4] py-[12px] px-5 rounded-b-md ">
+      <div className="bg-device-content-background py-[12px] px-5 rounded-b-md ">
         <span className='text-3.5 text-secondary'> Showing 1 - {devices.filter((device: Device) => device.status === status).length} of {devices.length} devices</span>
       </div>
     </div>

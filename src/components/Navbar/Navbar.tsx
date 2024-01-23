@@ -12,16 +12,13 @@ import Dashboard from "../NavbarIcons/Dashboard"
 import Connectors from "../NavbarIcons/Connectors"
 import Devices from "../NavbarIcons/Devices"
 import GeneralSettings from "../NavbarIcons/GeneralSettings"
+import React from "react";
 
 const Navbar = () => {
   const pathname = usePathname()
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [selectedName, setSelectedName] = useState('Roberts');
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
@@ -32,28 +29,28 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className="bg-secondary">
       <Link className="mr-5" href={'/'} >
         <Image src={Logo} alt="LCD logo" width={66} height={40} />
       </Link>
 
-      <Link className="link" href={'/dashboard'} onMouseOver={handleMouseOver} >
-        <Dashboard fill={isLinkActive('/dashboard') ? '#3498DB' : '#9DA0AF'} />
+      <Link className="link" href={'/dashboard'} >
+        <Dashboard fill={isLinkActive('/dashboard') ? 'navbar-active' : 'navbar-primary'} />
         Dashboard
       </Link>
 
       <Link className="link" href={'/connectors'} >
-        <Connectors fill={isLinkActive('/connectors') ? '#3498DB' : '#9DA0AF'} />
+        <Connectors fill={isLinkActive('/connectors') ? 'navbar-active' : 'navbar-primary'} />
         Connectors
       </Link>
 
       <Link className="link" href={'/devices'} >
-        <Devices fill={isLinkActive('/devices') ? '#3498DB' : '#9DA0AF'} />
+        <Devices fill={isLinkActive('/devices') ? 'navbar-active' : 'navbar-primary'} />
         Devices
       </Link>
 
       <Link className="link" href={'/general_settings'} >
-        <GeneralSettings fill={isLinkActive('/general_settings') ? '#3498DB' : '#9DA0AF'} />
+        <GeneralSettings fill={isLinkActive('/general_settings') ? 'navbar-active' : 'navbar-primary'} />
         General Settings
       </Link>
 
@@ -73,10 +70,8 @@ const Navbar = () => {
                 <Image src={DropdownArrow} alt={"Dropdown Arrow"} className="ml-1" />
               )
             }
-
           </div>
         </div>
-        
         {dropdownVisible && (
           <div className="dropdown">
             <Link href="#" >Settings</Link>

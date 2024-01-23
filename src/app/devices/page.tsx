@@ -15,15 +15,12 @@ const getDevices = async () => {
   }
 }
 
-
 const Devices = async () => {
 
   const devices = await getDevices()
 
   return (
-
     <div><DeviceList devices={devices} /></div>
-
   )
 }
 

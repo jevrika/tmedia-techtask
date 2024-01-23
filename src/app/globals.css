@@ -6,19 +6,12 @@ body {
   @apply bg-[#E2E3E9];
 }
 
-.text-primary {
-  @aplly text-[#C5C7D3];
-}
-.text-secondary {
-  @apply text-[#5C5F70];
-}
-
-.#F0F1F4 {
+.button-primary {
   @apply bg-[#F0F1F4];
 }
 /* nav styles  */
 nav {
-  @apply flex justify-center items-center gap-8 py-5 px-36 bg-[#181e34] text-nowrap text-[#C5C7D3];
+  @apply flex justify-center items-center gap-8 py-5 px-36 bg-[#181e34] text-nowrap text-text-primary;
 }
 
 .link {
@@ -56,27 +49,27 @@ input:focus-visible {
 /* device header styles */
 
 .statusButton {
-  border: 1px solid #d6d8e0
+  border: 1px solid #d6d8e0;
 }
 
 .statusButton:active {
   border: 1px solid #d6d8e0;
-  @apply bg-[#3498DB] text-white;
+  @apply bg-button-active text-white;
 }
 
 .statusButton:focus {
   border: 1px solid #d6d8e0;
-  @apply bg-[#3498DB] text-white;
+  @apply bg-button-active text-white;
 }
 
 /* device content styles */
 
-.block {
+.device {
   border: 1px solid #d6d8e0;
   @apply flex items-center rounded-md py-5 px-5 gap-4;
 }
 
-.block:hover .blockButton {
+.device:hover .blockButton {
   @apply visible;
 }
 
@@ -107,4 +100,12 @@ input:focus-visible {
 
 .button:hover {
   @apply opacity-75;
+}
+
+.test:active .dropdown {
+  @apply visible flex;
+}
+
+.test:focus .dropdown {
+  @apply visible flex;
 }
