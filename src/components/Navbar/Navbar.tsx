@@ -44,12 +44,10 @@ const Navbar = () => {
       </Link>
 
       {links.map((link, index) => (
-        <>
-          <Link href={link.href} className="link">
-            <link.componentName key={index} fill={isLinkActive(link.href) ? 'navbar-active' : 'navbar-primary'} />
+          <Link key={index} href={link.href}  className="link">
+            <link.componentName fill={isLinkActive(link.href) ? 'navbar-active' : 'navbar-primary'} />
             {link.componentText}
           </Link>
-        </>
       ))}
 
       <div className="relative userWrapper">
