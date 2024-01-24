@@ -45,7 +45,7 @@ const Navbar = () => {
 
       {links.map((link, index) => (
         <>
-          <Link href={link.href} >
+          <Link href={link.href} className="link">
             <link.componentName key={index} fill={isLinkActive(link.href) ? 'navbar-active' : 'navbar-primary'} />
             {link.componentText}
           </Link>
