@@ -29,32 +29,28 @@ const Navbar = () => {
     return pathname === href;
   };
 
-  
+  const links = [
+    { componentName: Dashboard, componentText: 'Dashboard', href: "/dashboard" },
+    { componentName: Connectors, componentText: 'Connectors', href: "/connectors" },
+    { componentName: Devices, componentText: 'Devices', href: "/devices" },
+    { componentName: GeneralSettings, componentText: 'General Settings', href: "/general_settings" },
+  ]
+
   return (
     <nav className="bg-navbar-background">
+
       <Link className="mr-5" href={'/'} >
         <Image src={Logo} alt="LCD logo" width={66} height={40} />
       </Link>
 
-      <Link className="link" href={'/dashboard'} >
-        <Dashboard fill={isLinkActive('/dashboard') ? 'navbar-active' : 'navbar-primary'} />
-        Dashboard
-      </Link>
-
-      <Link className="link" href={'/connectors'} >
-        <Connectors fill={isLinkActive('/connectors') ? 'navbar-active' : 'navbar-primary'} />
-        Connectors
-      </Link>
-
-      <Link className="link" href={'/devices'} >
-        <Devices fill={isLinkActive('/devices') ? 'navbar-active' : 'navbar-primary'} />
-        Devices
-      </Link>
-
-      <Link className="link" href={'/general_settings'} >
-        <GeneralSettings fill={isLinkActive('/general_settings') ? 'navbar-active' : 'navbar-primary'} />
-        General Settings
-      </Link>
+      {links.map((link, index) => (
+        <>
+          <Link href={link.href} >
+            <link.componentName key={index} fill={isLinkActive(link.href) ? 'navbar-active' : 'navbar-primary'} />
+            {link.componentText}
+          </Link>
+        </>
+      ))}
 
       <div className="relative userWrapper">
         <div className="firstLetter">
@@ -64,7 +60,7 @@ const Navbar = () => {
         <div className="profile-container">
           <div className="flex flex-row cursor-pointer" onClick={toggleDropdown}>
             <span className="username">{user}</span>
-          
+
             <Image src={DropdownArrow} alt={"Dropdown Arrow"} className={dropdownVisible ? 'arrowDown' : 'arrowUp'} />
 
           </div>
