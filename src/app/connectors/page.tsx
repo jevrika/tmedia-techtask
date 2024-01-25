@@ -6,8 +6,7 @@ export const metadata: Metadata = {
 }
 
 
-const Connectors = () => {
-  return (
+const Connectors = () => {(
     <div></div>
   )
 }

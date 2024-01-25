@@ -2,66 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-secondary box-border;
-}
-
-/* nav styles  */
-nav {
-  @apply flex justify-center items-center gap-8 py-5 px-36 text-nowrap text-text-primary;
-}
-
-.link {
-  @apply flex items-center gap-2;
-}
-
-.userWrapper {
-  @apply flex justify-center ml-[auto] items-center gap-2;
-}
-
-.dropdown {
-  @apply absolute top-0 right-5 w-full my-9 pl-16 flex flex-col bg-transparent gap-1;
-}
-
-.firstLetter {
-  @apply bg-profile-background text-navbar-background font-bold text-sm w-8 h-8 flex-shrink-0 rounded-full flex items-center justify-center;
-}
-
-.arrowUp {
-  @apply ml-1;
-}
-
-.arrowDown {
-  @apply ml-1 rotate-180;
-}
-/* header styles  */
-
-.headerBox {
-  @apply flex flex-col gap-3;
-}
-
-/* search styles */
-
-.searchWrapper {
-  @apply flex justify-center items-center gap-2 bg-primary rounded-md py-3 px-3;
-}
-
-input:focus-visible {
-  outline: none;
-}
-
-/* device header styles */
-
-.statusButton {
-  @apply border border-solid border-border-primary;
-}
-
-.active {
-  @apply bg-button-active text-white border border-solid border-border-primary;
-}
-
-/* device content styles */
-
 .device {
   @apply flex items-center rounded-md py-5 px-5 gap-4 border border-solid border-border-primary;
 }
@@ -70,30 +10,16 @@ input:focus-visible {
   @apply visible;
 }
 
+.deviceButton {
+  @apply bg-primary py-1.5 px-4 text-sm font-medium invisible border border-solid border-primary;
+}
+
 .statusIndicator {
   -webkit-appearance: none;
   transition: 0.1s;
   @apply bg-offline-status-color text-center rounded-full outline-none w-1.5 h-1.5;
 }
 
-.deviceOnline {
-  @apply bg-online-status-color;
-}
-
-.deviceOffline {
-  @apply bg-offline-status-color;
-}
-
-.deviceButton {
-  @apply bg-primary py-1.5 px-4 text-sm font-medium invisible border border-solid border-primary;
-}
-
-/* common styles */
-
-.button {
-  @apply flex flex-row items-center py-1.5 px-4 rounded-md gap-2.5;
-}
-
-.button:hover {
+button:hover {
   @apply opacity-75;
 }

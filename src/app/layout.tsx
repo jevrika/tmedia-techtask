@@ -19,11 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`bg-amber-500 relative bg-secondary box-border h-screen flex flex-col min-h-screen${inter.className}`}>
         <Navbar />
         <Header />
+        {children}
         <Footer />
-        {children}</body>
+        </body>
     </html>
   );
 }

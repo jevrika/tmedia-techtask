@@ -26,9 +26,9 @@ const SingleDevice = ({ title, connectionPercentage, deviceVariant, model, messa
 
 
   return (
-    <div className={`device ${getDeviceStyle()}`} >
+    <div className={`flex items-center rounded-md py-5 px-5 gap-4 border border-solid border-border-primary ${getDeviceStyle()}`} >
 
-      <div className={deviceStatus ? 'statusIndicator deviceOnline' : 'statusIndicator deviceOffline'}></div>
+      <div className={deviceStatus ? 'statusIndicator  bg-online-status-color' : 'statusIndicator bg-offline-status-color'}></div>
 
       <div className="firstColumn">
         <h1 className='text-3.5 font-medium'> {title}</h1>

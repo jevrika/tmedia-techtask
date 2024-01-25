@@ -23,7 +23,7 @@ const config: Config = {
         'offline-status-color' : "#FE0006",
         'number-background': '#F0F1F4',
         'active-number-background' : '#D6EFFF',
-        'border-primary' : '#d6d8e0'
+        'border-primary' : '#d6d8e0',
 
       },
     },

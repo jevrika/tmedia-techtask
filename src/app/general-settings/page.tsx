@@ -5,8 +5,7 @@ export const metadata: Metadata = {
   title: 'LCD | General Settings',
 }
 
-const generalSettings = () => {
-  return (
+const generalSettings = () => {(
     <div></div>
   )
 }

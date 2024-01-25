@@ -13,13 +13,13 @@ const Button = ({ buttonText, number, click, buttonVariant, type, active = false
     if (buttonVariant === 'deviceButton') {
       return 'deviceButton'
     } else if (buttonVariant === 'deviceStatusButton') {
-      return active ? 'statusButton active' : 'statusButton'
+      return active ? 'border border-solid border-border-primary bg-button-active text-white border border-solid border-border-primary' : 'border border-solid border-border-primary'
     }
-    return 'button'
+    return 'flex flex-row items-center py-1.5 px-4 rounded-md gap-2.5 '
   }
 
   return (
-    <button className={`button ${getButtonStyles()}`} onClick={click} type={type}> {buttonText}
+    <button className={`flex flex-row items-center py-1.5 px-4 rounded-md gap-2.5 ${getButtonStyles()}`} onClick={click} type={type}> {buttonText}
       {number ?
         <span className='text-black bg-number-background button-primary py-1 px-2 rounded-lg text-xs font-medium'> {number} </span>
         : ''}
