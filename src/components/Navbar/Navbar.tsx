@@ -12,11 +12,11 @@ import Dashboard from "../NavbarIcons/Dashboard"
 import Connectors from "../NavbarIcons/Connectors"
 import Devices from "../NavbarIcons/Devices"
 import GeneralSettings from "../NavbarIcons/GeneralSettings"
-import React from "react";
+
+const user = 'Roberts'
 
 const Navbar = () => {
 
-  const user = 'Roberts'
   const pathname = usePathname()
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -30,10 +30,10 @@ const Navbar = () => {
   };
 
   const links = [
-    { componentName: Dashboard, componentText: 'Dashboard', href: "/dashboard" },
-    { componentName: Connectors, componentText: 'Connectors', href: "/connectors" },
-    { componentName: Devices, componentText: 'Devices', href: "/devices" },
-    { componentName: GeneralSettings, componentText: 'General Settings', href: "/general_settings" },
+    { Icon: Dashboard, label: 'Dashboard', href: "/dashboard" },
+    { Icon: Connectors, label: 'Connectors', href: "/connectors" },
+    { Icon: Devices, label: 'Devices', href: "/devices" },
+    { Icon: GeneralSettings, label: 'General Settings', href: "/general_settings" },
   ]
 
   return (
@@ -43,11 +43,11 @@ const Navbar = () => {
         <Image src={Logo} alt="LCD logo" width={66} height={40} />
       </Link>
 
-      {links.map((link, index) => (
-          <Link key={index} href={link.href}  className="link">
-            <link.componentName fill={isLinkActive(link.href) ? 'navbar-active' : 'navbar-primary'} />
-            {link.componentText}
-          </Link>
+      {links.map(({ Icon, label, href }, index) => (
+        <Link key={index} href={href} className={`link ${isLinkActive(href) ? 'fill-navbar-active' : 'fill-navbar-primary'}`}>
+          <Icon />
+          {label}
+        </Link>
       ))}
 
       <div className="relative userWrapper">
@@ -57,6 +57,7 @@ const Navbar = () => {
 
         <div className="profile-container">
           <div className="flex flex-row cursor-pointer" onClick={toggleDropdown}>
+
             <span className="username">{user}</span>
 
             <Image src={DropdownArrow} alt={"Dropdown Arrow"} className={dropdownVisible ? 'arrowDown' : 'arrowUp'} />

@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+
 import { usePathname } from 'next/navigation'
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
       <span className='text-white text-xl'>{sectionName}</span>
       <div className='h-9'></div>
     </div>
-    
+
   )
 }
 

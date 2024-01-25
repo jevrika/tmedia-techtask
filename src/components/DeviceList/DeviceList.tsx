@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import Search from '../../assets/Search.svg'
 import Button from '@/components/Button/Button'
@@ -11,8 +11,35 @@ import { Device } from '../../../Device'
 type DevicesProps = {
   devices: Device[]
 }
-const Devices = ({ devices }: DevicesProps) => {
-  const [status, setStatus] = useState(true)
+
+type DeviceFilter = 'online' | 'offline' | 'all'
+
+const DevicesList = ({ devices }: DevicesProps) => {
+  const [deviceFilter, setDeviceFilter] = useState<DeviceFilter>('all')
+
+  const deviceStats = useMemo(() => {
+    const onlineCount = devices.filter((device) => device.status === true).length;
+    const offlineCount = devices.filter((device) => device.status === false).length;
+
+    return {
+      online: onlineCount,
+      offline: offlineCount,
+    };
+  }, [devices]);
+
+  const deviceToShare: Device[] = devices.filter((device: Device) => {
+    if (deviceFilter === 'online') {
+      return device.status === true;
+    } else if (deviceFilter === 'offline') {
+      return device.status === false;
+    } else {
+      return true;
+    }
+  });
+
+  const toggleDeviceStatus = (deviceStatus: DeviceFilter) => {
+    deviceFilter !== deviceStatus ? setDeviceFilter(deviceStatus) : setDeviceFilter('all')
+  }
 
   return (
     <div className='py-5 px-32 absolute w-full translate-y-[-65px]'>
@@ -20,8 +47,8 @@ const Devices = ({ devices }: DevicesProps) => {
         <div className="flex justify-between gap-1 py-5 header">
 
           <div className="flex gap-1 buttonWrapper">
-            <Button buttonVariant={'deviceStatusButton'} number={devices.filter((device: Device) => device.status === true).length} click={() => setStatus(true)} buttonText={'Online'} type={'button'} />
-            <Button buttonVariant={'deviceStatusButton'} number={devices.filter((device: Device) => device.status === false).length} click={() => setStatus(false)} buttonText={'Offline'} type={'button'} />
+            <Button buttonVariant={'deviceStatusButton'} number={deviceStats.online} active={deviceFilter === 'online'} click={() => toggleDeviceStatus('online')} buttonText={'Online'} type={'button'} />
+            <Button buttonVariant={'deviceStatusButton'} number={deviceStats.offline} active={deviceFilter === 'offline'} click={() => toggleDeviceStatus('offline')} buttonText={'Offline'} type={'button'} />
           </div>
 
           <div className="searchWrapper">
@@ -32,18 +59,18 @@ const Devices = ({ devices }: DevicesProps) => {
         </div>
       </div>
 
-      {devices.filter((device: Device) => device.status === status).map((device: Device) =>
+      {deviceToShare.map((device: Device) =>
         <div key={device.id} className={`bg-white px-5 flex flex-col gap-1 content pb-5 DeviceId-${device.id}`}>
           <SingleDevice deviceVariant={'device'} deviceStatus={device.status} deviceId={device.id} model={device.model} title={device.title} connectionPercentage={device.connection} messages={device.constat} />
         </div>
       )}
 
       <div className="bg-device-content-background py-[12px] px-5 rounded-b-md ">
-        <span className='text-3.5 text-text-secondary'> Showing 1 - {devices.filter((device: Device) => device.status === status).length} of {devices.length} devices</span>
+        <span className='text-3.5 text-text-secondary'> Showing 1 - {deviceToShare.length} of {devices.length} devices</span>
       </div>
-      
+
     </div>
   )
 }
 
-export default Devices
+export default DevicesList

@@ -56,11 +56,7 @@ input:focus-visible {
   @apply border border-solid border-border-primary;
 }
 
-.statusButton:active {
-  @apply bg-button-active text-white border border-solid border-border-primary;
-}
-
-.statusButton:focus {
+.active {
   @apply bg-button-active text-white border border-solid border-border-primary;
 }
 
