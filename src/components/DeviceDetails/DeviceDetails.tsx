@@ -20,14 +20,14 @@ const DeviceDetails = async ({ params }: { params: { id: number } }) => {
 
   return (
 
-    <div className='py-5 px-32 absolute w-full translate-y-[-65px]'>
-      <div className='px-5 bg-[#FFFFFF] rounded-t' >
-        <div className="flex justify-between gap-1 py-5 header">
-          <div className={device.status ? 'statusIndicator deviceOnline' : 'statusIndicator deviceOffline'}></div>
-          <h1>{device.title}</h1>
+    <div className='py-5 px-32 w-full my-[-65px]'>
+      <div className='px-5 bg-device-details-background rounded-t' >
+        <div className="flex justify-between gap-1 py-5 header items-center">
+          <div className={device.status ? 'bg-online-status-color statusIndicator ' : 'bg-offline-status-color statusIndicator'}></div>
+          <h1 className='font-medium' >{device.title}</h1>
           <span>Connection {device.connection} %</span>
           <span> {device.model}</span>
-          <p className='text-3.5 font-medium'>{device.constat} messages over 28 days </p>
+          <p className='text-3.5 '>{device.constat} messages over 28 days </p>
         </div>
       </div>
 

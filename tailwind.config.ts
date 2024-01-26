@@ -24,6 +24,7 @@ const config: Config = {
         'number-background': '#F0F1F4',
         'active-number-background' : '#D6EFFF',
         'border-primary' : '#d6d8e0',
+        'device-details-background': '#FFFFFF'
 
       },
     },

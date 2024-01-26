@@ -5,6 +5,7 @@ import Link from 'next/link';
 import RightArrow from '../../assets/Right.svg'
 import Button from '../Button/Button';
 
+
 type SingleDeviceProps = {
   title: string;
   connectionPercentage: number;
@@ -24,11 +25,10 @@ const SingleDevice = ({ title, connectionPercentage, deviceVariant, model, messa
     return 'device'
   }
 
-
   return (
     <div className={`flex items-center rounded-md py-5 px-5 gap-4 border border-solid border-border-primary ${getDeviceStyle()}`} >
 
-      <div className={deviceStatus ? 'statusIndicator  bg-online-status-color' : 'statusIndicator bg-offline-status-color'}></div>
+      <div className={deviceStatus ? 'bg-online-status-color statusIndicator ' : 'bg-offline-status-color statusIndicator '}></div>
 
       <div className="firstColumn">
         <h1 className='text-3.5 font-medium'> {title}</h1>

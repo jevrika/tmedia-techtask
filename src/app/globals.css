@@ -17,7 +17,7 @@
 .statusIndicator {
   -webkit-appearance: none;
   transition: 0.1s;
-  @apply bg-offline-status-color text-center rounded-full outline-none w-1.5 h-1.5;
+  @apply text-center rounded-full outline-none w-1.5 h-1.5;
 }
 
 button:hover {
