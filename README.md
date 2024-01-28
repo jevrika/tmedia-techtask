@@ -13,8 +13,8 @@ App created using Next.js with json server, for T-Media technical task, where th
 - /dashboard: Displays the dashboard.
 - /connectors: Displays the connectors.
 - /devices: Displays the devices list
-- /devices/:id : Displays devices signle view page
-- /general_settings: Displats general settings
+- /devices/:id : Displays devices single view page
+- /general_settings: Displays general settings
 
 
 ## Built Using
