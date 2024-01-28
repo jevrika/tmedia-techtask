@@ -20,6 +20,6 @@ App created using Next.js with json server, for T-Media technical task, where th
 ## Built Using
 
 - Next.js [Next.js Documentation](https://nextjs.org/docs).
-- JSON Server [JSON Server(https://www.npmjs.com/package/json-server)]
+- JSON Server [JSON Server](https://www.npmjs.com/package/json-server)
 
 
